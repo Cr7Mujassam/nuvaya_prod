@@ -4,7 +4,7 @@ name: Deploy NUVAYA Website
 on:
   push:
     branches:
-      - uat_test
+      - main
   workflow_dispatch:
 
 permissions:
@@ -21,8 +21,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout UAT branch
         uses: actions/checkout@v4
+        with:
+          ref: uat_test
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
