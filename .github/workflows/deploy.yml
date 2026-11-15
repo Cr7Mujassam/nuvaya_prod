@@ -4,7 +4,7 @@ name: Deploy NUVAYA Website
 on:
   push:
     branches:
-      - main
+      - uat_test
   workflow_dispatch:
 
 permissions:
