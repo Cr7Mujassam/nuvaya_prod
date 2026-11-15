@@ -21,12 +21,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout UAT branch
+      - name: Checkout actual website code
         uses: actions/checkout@v4
         with:
           ref: uat_test
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -34,10 +34,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build React Vite project
+      - name: Build React website
         run: npm run build
 
-      - name: Upload build files
+      - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -51,6 +51,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
