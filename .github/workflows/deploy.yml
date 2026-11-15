@@ -3,7 +3,7 @@ name: Deploy NUVAYA to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [uat_test]
   workflow_dispatch:
 
 permissions:
